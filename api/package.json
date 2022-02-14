@@ -1,0 +1,28 @@
+{
+  "name": "blogtest2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./server/index.js",
+    "dev": "nodemon ./server/index.js",
+    "coverage": "jest --coverage --silent"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "coverage": "^0.4.1",
+    "dayjs": "^1.10.7",
+    "express": "^4.17.2",
+    "fuse.js": "^6.5.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "supertest": "^6.2.2"
+  }
+}
