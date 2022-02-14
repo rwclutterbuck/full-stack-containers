@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header,
+nav {
+  background-color: rgb(105, 172, 218);
+}
+
+body,
+section {
+  background-color: rgba(253, 241, 243, 0.911);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  align-self: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 920px) {
+  #preview-container {
+    display: none;
+  }
+  #form-section {
+    width: 80%;
+  }
+}
