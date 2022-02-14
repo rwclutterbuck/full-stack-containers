@@ -147,10 +147,12 @@ module.exports = {
 
 },{"jwt-decode":1}],4:[function(require,module,exports){
 const helpers = require("./helpers");
+const api = "http://localhost:3000"
+// const api = "https://supercodersapi.herokuapp.com"
 
 // Fetch all blogs for the homepage
 function getAllBlogs() {
-  fetch("https://supercodersapi.herokuapp.com/blog")
+  fetch(`${api}/blog`)
     .then((r) => r.json())
     .then(helpers.appendBlogs)
     .catch(console.warn);
@@ -185,7 +187,7 @@ const postBlog = async (e) => {
   // Update page after form submission
   helpers.changeSection();
 
-  fetch("https://supercodersapi.herokuapp.com/blog", options)
+  fetch(`${api}/blog`, options)
     .then((r) => r.json())
     .catch(console.warn);
 };
@@ -233,14 +235,14 @@ function newComment(e) {
   };
 
   const blogId = window.sessionStorage.getItem("blogID");
-  fetch(`https://supercodersapi.herokuapp.com/blog/${blogId}`, options)
+  fetch(`${api}/blog/${blogId}`, options)
     .then((r) => r.json())
     .catch(console.warn);
 }
 
 // Retrieve specific blog for blog.html -     SEARCH!!!
 function getBlog(blogId) {
-  fetch(`https://supercodersapi.herokuapp.com/blog/${blogId}`)
+  fetch(`${api}/blog/${blogId}`)
     .then((r) => r.json())
     .then(helpers.appendBlogContent)
     .catch(console.warn);
@@ -279,7 +281,7 @@ function incrementEmoji(blogId, emojiId, options) {
   const thisEmoji = document.querySelector(`#card-emoji-${emojiId}`);
   thisEmoji.textContent = parseInt(thisEmoji.textContent) + 1;
   fetch(
-    `https://supercodersapi.herokuapp.com/blog/${blogId}/emoji/${emojiId}/plus`,
+    `${api}/blog/${blogId}/emoji/${emojiId}/plus`,
     options
   );
   helpers.highlightEmoji(emojiId);
@@ -289,7 +291,7 @@ function decrementEmoji(blogId, emojiId, options) {
   const thisEmoji = document.querySelector(`#card-emoji-${emojiId}`);
   thisEmoji.textContent = parseInt(thisEmoji.textContent) - 1;
   fetch(
-    `https://supercodersapi.herokuapp.com/blog/${blogId}/emoji/${emojiId}/minus`,
+    `${api}/blog/${blogId}/emoji/${emojiId}/minus`,
     options
   );
   helpers.highlightEmoji(emojiId);
@@ -305,7 +307,7 @@ function deleteBlog() {
     method: "DELETE",
   };
 
-  fetch(`https://supercodersapi.herokuapp.com/blog/${blogId}`, options).catch(
+  fetch(`${api}/blog/${blogId}`, options).catch(
     console.warn
   );
   
@@ -315,7 +317,7 @@ function deleteBlog() {
 // search blog title and retrieve it
 function searchBlog(e) {
   console.log(e.target.value);
-  fetch(`https://supercodersapi.herokuapp.com/search?q=${e.target.value}`)
+  fetch(`${api}/search?q=${e.target.value}`)
     .then((r) => r.json())
     .then((data) => {
       console.log(data);
