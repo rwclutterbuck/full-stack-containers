@@ -1,4 +1,38 @@
-version: 3
+version: '3'
 services:
   client:
     image: node:alpine
+    ports:
+      - 80:8080
+    volumes:
+      - type: bind
+        source: ./client
+        target: /code
+    working_dir: /code
+    command: sh -c "npm i --only=production && npm start"
+  api:
+    image: node:alpine
+    ports:
+      - 3000:3000
+    environment:
+      - DB_CONNECTION=mongodb://<user>:<passwd>@db:27017
+      - DB_NAME=<serverName>
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+    working_dir: /code
+    command: sh -c "npm ci && npm start"
+    depends_on:
+      - db
+  db:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - MONGO_INITDB_DATABASE=blogs
+    volumes:
+      - "dbdata:/var/lib/mongodb/data"
+      - "./db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro"
+volumes:
+  dbdata:
