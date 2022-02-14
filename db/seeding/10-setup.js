@@ -1,0 +1,87 @@
+db = connect("localhost:27017/blogs")
+
+db.blogs.drop()
+
+db.blogs.insertMany([
+  {
+    "blogtitle": "Ostriches don't exist",
+    "blogcontent": "Scientists recently discovered that ostriches are just a large form of pigeon. They share the same genes apart from the gene for height. Up until 100 years ago ostriches didn't exist, it wasn't until a family of pigeons snuck onto an EasyJet flight to Africa. On the flight one of them had its head stuck out of the window causing it to get stretched extensively resulting in the ostrich-like appearance we're familiar with today.",
+    "timestamp": "29/01/2022 11:45:33",
+    "gif": "https://media4.giphy.com/media/l1J9znYNISr0aEmze/giphy.webp?cid=112e516bj583yd2p34cuzg3zsicfoeokijom4c68tw0zkjvu&rid=giphy.webp&ct=g",
+    "comment": {"1":{
+        "blogcomment": "That awkward moment when you find out that you don't exist... -Ostrich",
+        "timestamp": "29/01/2022 11:48:37"
+    }, "2":{
+        "blogcomment": "Haha nice try! I bet next time you'll say that chairs don't exist...",
+        "timestamp": "29/01/2022 12:22:07"
+    }},
+    "emoji": {"1":{"emojiCount": 231 }, "2":{"emojiCount": 175}, "3":{"emojiCount": 98}}
+  },
+  {
+    "blogtitle": "Are Aliens real? Part 1",
+    "blogcontent": "I never thought Aliens could be real. I thought 'how stupid could someone be to believe there is something non-human actually out there'. Well, I take it all back. They definitely might exist. I thought that the older I got the more ignorant I would get. I almost believed that something completely inexplainable could happen to me, but I would just figure, 'Hey… there is probably a valid reason for that!'. Now. As a 18 year old boy. I don’t have the will to believe any different.",
+    "timestamp": "30/01/2022 10:34:46",
+    "gif": "https://media2.giphy.com/media/gHcPh3ehbRGik/giphy.webp?cid=112e516bpll6jg8e3bkezhdzjedxlzxfr7z4eyle2f9fub23&rid=giphy.webp&ct=g",
+    "comment": {"1":{
+        "blogcomment": "OMG I thought I was the only one!",
+        "timestamp": "30/01/2022 11:07:55"
+        
+    }, "2":{
+        "blogcomment": "The same thing happened to me too. Join the Alien Believers Society for support!",
+        "timestamp": "30/01/2022 11:55:44"
+    }},
+    "emoji": {"1":{"emojiCount": 167 }, "2":{"emojiCount": 134}, "3":{"emojiCount": 122}}
+  },
+  { 
+    "blogtitle": "My brother believes in Aliens",
+    "blogcontent": "I love the guy but he's freaking me out!!!",
+    "timestamp": "31/01/2022 12:04:22",
+    "gif": "https://media0.giphy.com/media/3oEjI789af0AVurF60/giphy.webp?cid=112e516bf9nnnymdnva57g1ze6cg1c5uj0eje4wjqf2jm5qm&rid=giphy.webp&ct=g",
+    "comment": {"1":{
+        "blogcomment": "Ratio",
+        "timestamp": "31/01/2022 12:12:12"
+    }, "2":{
+        "blogcomment": "It's true I do!!!",
+        "timestamp": "31/01/2022 12:17:10"
+    }},
+    "emoji": {"1":{"emojiCount": 160 }, "2":{"emojiCount": 133}, "3":{"emojiCount": 276}}
+  },
+  {
+        "blogtitle": "Richard loves Linux",
+        "blogcontent": "Richard REALLY REALLY loves Linux",
+        "timestamp": "02/02/2022 09:22:42",
+        "gif": "https://media2.giphy.com/media/3og0ICG4WxdKSRzE3K/giphy.gif?cid=112e516bwsceaq2go70nr3dryomhzmop52b7y62lyxvm09zt&rid=giphy.gif&ct=g",
+        "comment": {"1":{
+            "blogcomment": "I have a Linux joke... But some of you would not apt-get it.",
+            "timestamp": "02/02/2022 10:11:11"
+        }},
+        "emoji": {"1":{"emojiCount": 212 }, "2":{"emojiCount": 245}, "3":{"emojiCount": 247}}
+  },
+  {
+        "blogtitle": "Noah loves writing blogs",
+        "blogcontent": "He's sooo good at it check out his blog!",
+        "timestamp": "03/02/2022 12:02:19",
+        "gif": "https://media1.giphy.com/media/yNs2a0jRkYxy6191B2/giphy.gif?cid=112e516bjbj5bi7fb42f1r7xu6qddj4zzq0niqgu9lll2fkg&rid=giphy.gif&ct=g",
+        "comment": {},
+        "emoji": {"1":{"emojiCount": 102 }, "2":{"emojiCount": 182}, "3":{"emojiCount": 193}}
+  },
+  {
+        "blogtitle": "Hamza loves warm milk",
+        "blogcontent": "Hamza loves warm milk because when he was a child cold milk felt cold to him",
+        "timestamp": "03/02/2022 13:11:47",
+        "gif": "https://media1.giphy.com/media/pbEqpHhDLmKNA7yUye/giphy.gif?cid=112e516bphdxnms2kjjrxbsre67ybsy9o41v6305l1d2jc3b&rid=giphy.gif&ct=g",
+        "comment": {"1":{
+                "blogcomment": "I'm so sorry to hear that",
+                "timestamp": "03/02/2022 15:34:01"
+        }},
+        "emoji": {"1":{"emojiCount": 443 }, "2":{"emojiCount": 192}, "3":{"emojiCount": 139}}
+  },
+  {
+        "blogtitle": "Samina IS yoshi",
+        "blogcontent": "She's a green machine ready for action",
+        "timestamp": "04/02/2022 10:19:58",
+        "gif": "https://media2.giphy.com/media/C51woXfgJdug/giphy.gif?cid=112e516btys3hvdudc32py3wwcdylk62b183cr3q0vjlq2b9&rid=giphy.gif&ct=g",
+        "comment": {},
+        "emoji": {"1":{"emojiCount": 128 }, "2":{"emojiCount": 384}, "3":{"emojiCount": 294}}
+        }
+])

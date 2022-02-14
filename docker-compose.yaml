@@ -15,14 +15,14 @@ services:
     ports:
       - 3000:3000
     environment:
-      - DB_CONNECTION=mongodb://<user>:<passwd>@db:27017
-      - DB_NAME=<serverName>
+      - DB_CONNECTION=mongodb://admin:pass@db:27017
+      - DB_NAME=blogs
     volumes:
       - type: bind
         source: ./api
         target: /code
     working_dir: /code
-    command: sh -c "npm ci && npm start"
+    command: sh -c "npm i --only=production && npm start"
     depends_on:
       - db
   db:
@@ -33,6 +33,6 @@ services:
       - MONGO_INITDB_DATABASE=blogs
     volumes:
       - "dbdata:/var/lib/mongodb/data"
-      - "./db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro"
+      - "./db/seeding:/docker-entrypoint-initdb.d:ro"
 volumes:
   dbdata:
