@@ -5,5 +5,6 @@
 - `docker-compose`
 
 ### How to run
-- `docker compose up`
-- `docker compose down --volumes --remove-orphans`
+
+- Initialize with `docker compose up`
+- Remove with `docker compose down --volumes --remove-orphans`
