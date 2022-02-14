@@ -1,2 +1,4 @@
 **/node_modules
-
+*/coverage
+client/dist
+api/package-lock.json client/package-lock.json
